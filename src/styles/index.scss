@@ -19,6 +19,7 @@ label {
 html {
   height: 100%;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 #app {
@@ -63,3 +64,15 @@ div:focus {
 .app-container {
   padding: 20px;
 }
+
+// zhengcj start
+.wrapper .el-scrollbar__wrap{
+  overflow-x: hidden !important;
+}
+// zhengcj end
+
+
+
+// fandp start
+
+// fandp end

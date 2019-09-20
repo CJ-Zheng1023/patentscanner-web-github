@@ -160,7 +160,28 @@ export const constantRoutes = [
   },
 
   // 404 page must be placed at the end !!!
-  { path: '*', redirect: '/404', hidden: true }
+  { path: '*', redirect: '/404', hidden: true },
+  {
+    path: '/examples',
+    redirect: '/examples/fandp',
+    name: 'Examples',
+    component: Layout,
+    meta: { title: 'examples' },
+    children: [
+      {
+        path: 'fandp',
+        name: 'Fandp',
+        component: () => import('@/examples/fandp'),
+        meta: { title: 'fandp' }
+      },
+      {
+        path: 'zhengcj',
+        name: 'Zhengcj',
+        component: () => import('@/examples/zhengcj'),
+        meta: { title: 'zhengcj' }
+      }
+    ]
+  }
 ]
 
 const createRouter = () => new Router({
