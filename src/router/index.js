@@ -187,6 +187,27 @@ export const constantRoutes = [
     name: 'Login',
     component: () => import('@/examples/login'),
     meta: { title: 'login' }
+  },
+  {
+    path: '/report',
+    component: Layout,
+    redirect: '/report/management',
+    name: 'Report',
+    meta: {
+      title: 'report'
+    },
+    children: [{
+      path: 'management',
+      component: () => import('@/views/report/Management'),
+      name: 'ReportManagement',
+      meta: { title: 'management' }
+    },
+    {
+      path: 'preview',
+      component: () => import('@/views/report/Preview'),
+      name: 'ReportPreview',
+      meta: { title: 'preview' }
+    }]
   }
 ]
 
