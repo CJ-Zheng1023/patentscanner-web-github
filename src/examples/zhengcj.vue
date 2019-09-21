@@ -1,3 +1,3 @@
 <template>
-  <div>zhengcj</div>
+  <div class="app-container">zhengcj</div>
 </template>

@@ -1,3 +1,3 @@
 <template>
-  <div>fandp</div>
+  <div class="app-container">fandp</div>
 </template>
