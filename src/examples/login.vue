@@ -94,7 +94,7 @@ export default {
     position: absolute;
     right: 110px;
     top:170px;
-    padding: 20px 60px;
+    padding: 20px 60px 33px 60px;
     width: 451px;
   }
   .login-form .title{
@@ -110,6 +110,7 @@ export default {
   }
   .login-form .login-btn{
     width: 100%;
+    margin-bottom: 14px;
   }
   .footer{
     overflow: hidden;
