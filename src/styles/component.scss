@@ -222,11 +222,10 @@ $informationLabelWidth: 100px;
     }
   }
 }
-$circleSize: 20px;
+$circleSize: 18px;
 .table{
   width: 100%;
   table-layout: fixed;
-  border-top: 1px solid rgb(234, 241, 251);
   border-left: 1px solid rgb(234, 241, 251);
   border-right: 1px solid rgb(234, 241, 251);
   &.table-info{
@@ -282,6 +281,7 @@ $circleSize: 20px;
     overflow: hidden;
     white-space: nowrap;
     vertical-align: middle;
+    line-height: 25px;
     & .cell{
       box-sizing: border-box;
       padding: 0 10px;
@@ -295,8 +295,15 @@ $circleSize: 20px;
         border-radius: 50%;
         line-height: $circleSize;
         color: #fff;
+        font-size: 13px;
         background-color: rgb(60, 119, 222);
         display: inline-block;
+      }
+      & .high{
+        color: rgb(234, 88, 69);
+      }
+      & .low{
+        color: rgb(43, 144, 212);
       }
     }
   }

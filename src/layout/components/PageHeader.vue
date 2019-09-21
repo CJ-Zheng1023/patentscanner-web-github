@@ -7,7 +7,7 @@
     <div class="topbar">
       <span class="text">李思</span>
       <span class="text">欢迎登录</span>
-      <a href="javascript:;" class="btn">注销登录</a>
+      <a href="javascript:;" class="button">注销登录</a>
     </div>
   </div>
 </template>
@@ -39,7 +39,7 @@
     & .topbar{
       float: right;
       line-height: $pageHeaderHeight;
-      & .text, & .btn{
+      & .text, & .button{
         color: #fff;
         font-size: 14px;
         margin: 0 5px;

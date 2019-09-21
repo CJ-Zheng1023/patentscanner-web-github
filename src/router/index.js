@@ -208,6 +208,27 @@ export const constantRoutes = [
       name: 'ReportPreview',
       meta: { title: 'preview' }
     }]
+  },
+  {
+    path: '/result',
+    component: Layout,
+    redirect: '/result/case',
+    name: 'Result',
+    meta: {
+      title: 'result'
+    },
+    children: [{
+      path: 'case',
+      component: () => import('@/views/result/Case'),
+      name: 'ResultCase',
+      meta: { title: 'case' }
+    },
+    {
+      path: 'patent',
+      component: () => import('@/views/result/Patent'),
+      name: 'ResultPatent',
+      meta: { title: 'patent' }
+    }]
   }
 ]
 
