@@ -28,6 +28,11 @@
     </div>
 
     <p>图标按钮</p>
+    <button type="button" class="btn btn-danger is-plain btn-radis btn-xs btn-icon">
+      <i class="el-icon-delete"></i>
+      删 除
+    </button>
+
     <button type="button" class="btn btn-icon">
       <img src="@/assets/images/delete.png">
       图标
