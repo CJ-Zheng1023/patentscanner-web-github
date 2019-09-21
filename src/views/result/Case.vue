@@ -196,7 +196,7 @@ export default {
     width: $leftSideWidth;
   }
   .right{
-    margin-left: $leftSideWidth + 20px;
+    margin-left: $leftSideWidth + 10px;
   }
   .score{
     font-size: 15px;

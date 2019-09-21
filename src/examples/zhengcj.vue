@@ -55,7 +55,7 @@
     <h3>table</h3>
     <div class="panel">
       <div class="panel-body">
-        <table cellspacing="0" cellpadding="0" border="0" class="table table-primary stripe">
+        <table cellspacing="0" cellpadding="0" border="0" class="table border table-primary stripe">
           <thead>
             <tr>
               <th style="width: 80px">
@@ -109,7 +109,7 @@
     </div>
     <div class="panel">
       <div class="panel-body">
-        <table cellspacing="0" cellpadding="0" border="0" class="table table-info">
+        <table cellspacing="0" cellpadding="0" border="0" class="table border table-info">
           <thead>
           <tr>
             <th style="width: 50px">

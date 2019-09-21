@@ -116,7 +116,7 @@
 
 // zhengcj start
 $panelHeaderHeight: 50px;
-$borderRadius: 4px;
+$borderRadius: 2px;
 $panelLeftRightPadding: 15px;
 .panel{
   background-color: #fff;
@@ -202,7 +202,7 @@ $panelLeftRightPadding: 15px;
 }
 $informationLabelWidth: 100px;
 .information{
-  font-size: 16px;
+  font-size: 14px;
   & .information-item{
     margin-bottom: 10px;
     & .label{
@@ -226,8 +226,12 @@ $circleSize: 18px;
 .table{
   width: 100%;
   table-layout: fixed;
-  border-left: 1px solid rgb(234, 241, 251);
-  border-right: 1px solid rgb(234, 241, 251);
+  border: none;
+  &.border{
+    border-left: 1px solid rgb(234, 241, 251);
+    border-right: 1px solid rgb(234, 241, 251);
+    border-top: 1px solid rgb(234, 241, 251);
+  }
   &.table-info{
     & th{
       background-color: rgb(229, 242, 252);
