@@ -181,6 +181,12 @@ export const constantRoutes = [
         meta: { title: 'zhengcj' }
       }
     ]
+  },
+  {
+    path: '/examples/login',
+    name: 'Login',
+    component: () => import('@/examples/login'),
+    meta: { title: 'login' }
   }
 ]
 
