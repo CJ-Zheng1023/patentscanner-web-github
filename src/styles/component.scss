@@ -5,5 +5,208 @@
 
 
 // zhengcj start
-
+$panelHeaderHeight: 50px;
+$borderRadius: 4px;
+$panelLeftRightPadding: 15px;
+.panel{
+  background-color: #fff;
+  border-radius: $borderRadius;
+  box-shadow: 0px 0px 13px 0px rgba(82, 63, 105, 0.05);
+  margin-bottom: 10px;
+  &.panel-info{
+    & .panel-header{
+      background-color: rgb(45, 149, 220);
+    }
+  }
+  & .panel-header{
+    padding: 0 $panelLeftRightPadding;
+    background-color: rgb(48, 83, 204);
+    height: $panelHeaderHeight;
+    color: #fff;
+    border-top-left-radius: $borderRadius;
+    border-top-right-radius: $borderRadius;
+    line-height: $panelHeaderHeight;
+    & .start{
+      float: left;
+    }
+    & .end{
+      float: right;
+    }
+    & .title{
+      font-size: 16px;
+      margin: 0;
+      padding: 0;
+    }
+    & .menubar{
+      & .menus{
+        padding: 0;
+        margin: 0;
+        & .menu-item{
+          float: left;
+          list-style: none;
+          padding: 0 10px;
+          margin: 0;
+          position: relative;
+          &:after{
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 14px;
+            background-color: #fff;
+          }
+          & a{
+            color: #fff;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    & .text{
+      font-size: 14px;
+      color: #fff;
+    }
+  }
+  & .panel-body{
+    padding: 10px $panelLeftRightPadding;
+    background-color: #fff;
+    border-radius: $borderRadius;
+    &.no-padding{
+      padding: 0;
+    }
+  }
+  & .panel-footer{
+    padding: 5px $panelLeftRightPadding;
+    &.center{
+      text-align: center;
+    }
+    &.right{
+      text-align: right;
+    }
+    &.left{
+      text-align: left;
+    }
+  }
+}
+$informationLabelWidth: 100px;
+.information{
+  font-size: 16px;
+  & .information-item{
+    margin-bottom: 10px;
+    & .label{
+      float: left;
+      width: $informationLabelWidth;
+      text-align: right;
+      color: rgb(102, 102, 102)
+    }
+    & .content{
+      margin-left: $informationLabelWidth + 5px;
+      color: rgb(51, 51, 51);
+      word-break: break-all;
+      word-wrap: break-word;
+      &.number{
+        color: rgb(243, 105, 121);
+      }
+    }
+  }
+}
+$circleSize: 26px;
+.table{
+  width: 100%;
+  table-layout: fixed;
+  border-top: 1px solid rgb(234, 241, 251);
+  border-left: 1px solid rgb(234, 241, 251);
+  border-right: 1px solid rgb(234, 241, 251);
+  &.table-info{
+    & th{
+      background-color: rgb(229, 242, 252);
+    }
+  }
+  &.table-primary{
+    & th{
+      background-color: rgb(48, 83, 204);
+      color: #fff;
+    }
+  }
+  &.stripe{
+    & tbody{
+      & tr{
+        &:nth-child(even) td{
+          background-color: rgb(248, 251, 254);
+        }
+        &:hover td{
+          background-color: rgb(244, 246, 250);
+        }
+        &.active td{
+          background-color: rgb(253, 241, 238);
+        }
+      }
+    }
+  }
+  & tbody tr{
+    &.active{
+      & td{
+        position: relative;
+        background-color: rgb(253, 241, 238);
+        &:first-child{
+          &:before{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1px;
+            height: 100%;
+            background-color: rgb(243, 99, 90);
+          }
+        }
+      }
+    }
+    &:hover td{
+      background-color: rgb(244, 246, 250);
+    }
+  }
+  & th, td{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: middle;
+    & .cell{
+      box-sizing: border-box;
+      padding: 0 10px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 100%;
+      & .circle{
+        height: $circleSize;
+        width: $circleSize;
+        border-radius: 50%;
+        line-height: $circleSize;
+        color: #fff;
+        background-color: rgb(60, 119, 222);
+        display: inline-block;
+      }
+    }
+  }
+  & th{
+    background-color: rgb(214, 225, 250);
+    padding: 15px 0;
+    color: rgb(46, 57, 100);
+    font-size: 15px;
+    text-align: center;
+  }
+  & td{
+    background-color: #fff;
+    padding: 15px 0;
+    color: rgb(58, 58, 58);
+    font-size: 15px;
+    text-align: left;
+    border-bottom: 1px solid rgb(234, 241, 251);
+    &.center{
+      text-align: center;
+    }
+  }
+}
 // zhengcj end
