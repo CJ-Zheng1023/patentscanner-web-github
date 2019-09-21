@@ -200,11 +200,11 @@ $panelLeftRightPadding: 15px;
     }
   }
 }
-$informationLabelWidth: 100px;
+$informationLabelWidth: 120px;
 .information{
   font-size: 14px;
   & .information-item{
-    margin-bottom: 10px;
+    margin-bottom: 25px;
     & .label{
       float: left;
       width: $informationLabelWidth;

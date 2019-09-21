@@ -23,7 +23,7 @@
           <tr>
             <th style="width: 50px">
               <div class="cell">
-                <el-checkbox :indeterminate="true" v-model="checked1"></el-checkbox>
+                <el-checkbox :indeterminate="isIndeterminate" v-model="allChecked" @change="checkAll"></el-checkbox>
               </div>
             </th>
             <th style="width: 80px">
@@ -44,7 +44,7 @@
           <tr v-for="(item,index) in reportTables" :key="index">
             <td class="center">
               <div class="cell">
-                <el-checkbox v-model="item.checked"></el-checkbox>
+                <el-checkbox @change="check" v-model="item.checked"></el-checkbox>
               </div>
             </td>
             <td class="center">
@@ -73,7 +73,7 @@
         </table>
       </div>
       <div class="panel-footer right">
-        <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page.sync="currentPage" :page-size="100" layout="prev, pager, next, jumper" :total="1000"></el-pagination>
+        <el-pagination :current-page.sync="currentPage" :page-size="100" layout="prev, pager, next, jumper" :total="1000"></el-pagination>
       </div>
     </div>
   </div>
@@ -90,13 +90,32 @@ export default {
         { patentName: '应用管理方法、设备、终端', createTime: '2019-10-10', checked: false }
       ],
       currentPage: 5,
-      checked1: false
+      allChecked: false,
+      isIndeterminate: false
+    }
+  },
+  computed: {
+    // 选中数据集合
+    checked() {
+      return this.reportTables.filter(item => !!item.checked)
+    },
+    dataSize() {
+      return this.reportTables.length
+    },
+    checkedSize() {
+      return this.checked.length
     }
   },
   methods: {
-    handleSizeChange(val) {
+    // 全选、反选
+    checkAll(val) {
+      this.reportTables.forEach(item => { item.checked = !!val })
+      this.allChecked = this.dataSize === this.checkedSize
+      this.isIndeterminate = false
     },
-    handleCurrentChange(val) {
+    check(val) {
+      this.allChecked = this.dataSize === this.checkedSize
+      this.isIndeterminate = this.checkedSize > 0 && this.checkedSize < this.dataSize
     }
   }
 }
