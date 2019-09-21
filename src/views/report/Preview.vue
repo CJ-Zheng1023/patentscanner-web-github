@@ -265,18 +265,11 @@ $labelWidth: 150px;
 .information .information-item{
   font-size: 15px;
 }
- /* #1B95DE*/
 .panel.alternative .panel-header{
   background-color: #1B95DE;
 }
-.panel.alternative .panel-body{
-  border:1px solid #1B95DE;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-.compare-body{
-  border:1px solid #2B5DD0;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+.save-report-btn{
+  margin-top:30px;
+  margin-bottom:20px;
 }
 </style>
