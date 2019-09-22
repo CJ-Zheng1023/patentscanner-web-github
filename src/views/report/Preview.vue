@@ -99,7 +99,7 @@
                   <tr>
                     <th style="width: 7%">
                       <div class="cell">
-                        <el-checkbox :indeterminate="true" v-model="checked1"></el-checkbox>
+                        <el-checkbox :indeterminate="isIndeterminate" v-model="allChecked" @change="checkAll"></el-checkbox>
                       </div>
                     </th>
                     <th style="width: 8%">
@@ -132,7 +132,7 @@
                   <tr>
                     <td class="center">
                       <div class="cell">
-                        <el-checkbox v-model="checked2"></el-checkbox>
+                        <el-checkbox @change="check" v-model="item.checked"></el-checkbox>
                       </div>
                     </td>
                     <td class="center">
@@ -209,21 +209,46 @@ export default {
         conclusion:''
       },
       compareList:[
-        {docNumber:'20134343434',category:'B',openDay:'2020223',paragraph:'说明书第一段',claim:'权利要求1',ipc:'DHODDD',score:90},
-        {docNumber:'20134343434',category:'B',openDay:'2020223',paragraph:'说明书第一段',claim:'权利要求1',ipc:'DHODDD',score:78},
-        {docNumber:'20134343434',category:'B',openDay:'2020223',paragraph:'说明书第一段',claim:'权利要求1',ipc:'DHODDD',score:34},
-        {docNumber:'20134343434',category:'B',openDay:'2020223',paragraph:'说明书第一段',claim:'权利要求1',ipc:'DHODDD',score:45},
-        {docNumber:'20134343434',category:'B',openDay:'2020223',paragraph:'说明书第一段',claim:'权利要求1',ipc:'DHODDD',score:45},
-        {docNumber:'20134343434',category:'B',openDay:'2020223',paragraph:'说明书第一段',claim:'权利要求1',ipc:'DHODDD',score:45}
+        {docNumber:'20134343434',category:'B',openDay:'2020223',paragraph:'说明书第一段',claim:'权利要求1',ipc:'DHODDD',score:90,checked: false },
+        {docNumber:'20134343434',category:'B',openDay:'2020223',paragraph:'说明书第一段',claim:'权利要求1',ipc:'DHODDD',score:78,checked: false },
+        {docNumber:'20134343434',category:'B',openDay:'2020223',paragraph:'说明书第一段',claim:'权利要求1',ipc:'DHODDD',score:34,checked: false },
+        {docNumber:'20134343434',category:'B',openDay:'2020223',paragraph:'说明书第一段',claim:'权利要求1',ipc:'DHODDD',score:45,checked: false },
+        {docNumber:'20134343434',category:'B',openDay:'2020223',paragraph:'说明书第一段',claim:'权利要求1',ipc:'DHODDD',score:45,checked: false },
+        {docNumber:'20134343434',category:'B',openDay:'2020223',paragraph:'说明书第一段',claim:'权利要求1',ipc:'DHODDD',score:45,checked: false }
       ],
       alternativeList:[
         {docNumber:'20134343434',category:'B',openDay:'2020223',paragraph:'说明书第一段',claim:'权利要求1',ipc:'DHODDD',score:90,title:'历史记录信息的清除方法'},
         {docNumber:'20134343434',category:'B',openDay:'2020223',paragraph:'说明书第一段',claim:'权利要求1',ipc:'DHODDD',score:90,title:'历史记录信息的清除方法'},
         {docNumber:'20134343434',category:'B',openDay:'2020223',paragraph:'说明书第一段',claim:'权利要求1',ipc:'DHODDD',score:90,title:'历史记录信息的清除方法'}
-      ]
+      ],
+      allChecked: false,
+      isIndeterminate: false
     }
   },
-  methods: {}
+  computed: {
+    // 选中数据集合
+    checked() {
+      return this.compareList.filter(item => !!item.checked)
+    },
+    dataSize() {
+      return this.compareList.length
+    },
+    checkedSize() {
+      return this.checked.length
+    }
+  },
+  methods: {
+    // 全选、反选
+    checkAll(val) {
+      this.compareList.forEach(item => { item.checked = !!val })
+      this.allChecked = this.dataSize === this.checkedSize
+      this.isIndeterminate = false
+    },
+    check(val) {
+      this.allChecked = this.dataSize === this.checkedSize
+      this.isIndeterminate = this.checkedSize > 0 && this.checkedSize < this.dataSize
+    }
+  }
 }
 </script>
 <style scoped lang="scss">

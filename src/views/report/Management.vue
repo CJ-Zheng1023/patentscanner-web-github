@@ -48,7 +48,7 @@
               </div>
             </td>
             <td class="center">
-              <div class="cell">{{index+1}}</div>
+              <div class="cell"> <span class="circle">{{index +1}}</span></div>
             </td>
             <td>
               <div class="cell">{{item.patentName}}</div>
