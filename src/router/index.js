@@ -229,6 +229,33 @@ export const constantRoutes = [
       name: 'ResultPatent',
       meta: { title: 'patent' }
     }]
+  },
+  {
+    path: '/project',
+    component: Layout,
+    redirect: '/project/create',
+    name: 'Project',
+    meta: {
+      title: 'project'
+    },
+    children: [{
+      path: 'create',
+      component: () => import('@/views/project/Create'),
+      name: 'ProjectCreate',
+      meta: { title: 'create' }
+    },
+    {
+      path: 'upload',
+      component: () => import('@/views/project/Upload'),
+      name: 'ProjectUpload',
+      meta: { title: 'upload' }
+    },
+    {
+      path: 'management',
+      component: () => import('@/views/project/Management'),
+      name: 'ProjectManagement',
+      meta: { title: 'management' }
+    }]
   }
 ]
 
