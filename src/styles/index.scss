@@ -3,6 +3,7 @@
 @import './transition.scss';
 @import './element-ui.scss';
 @import './sidebar.scss';
+@import './component.scss';
 
 body {
   height: 100%;
@@ -71,6 +72,16 @@ div:focus {
 }
 .el-tabs__header{
   padding: 0 10px;
+}
+.project-management .el-input__inner{
+  height: 30px;
+}
+.project-management .el-form-item__content{
+  line-height: $panelHeaderHeight;
+}
+.project-management .el-progress-bar__outer{
+  height: 4px !important;
+  background-color: rgb(132, 166, 253);
 }
 // zhengcj end
 
