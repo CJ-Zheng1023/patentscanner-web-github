@@ -47,8 +47,8 @@
             </div>
             <div class="end">
               <div class="btn-group" style="line-height: 1">
-                <button type="button" class="btn btn-info">全部预览</button>
-                <button type="button" class="btn btn-info">预览报告</button>
+                <button type="button" class="btn btn-info btn-icon"><i class="iconfont miit-icon-view"></i>全部预览</button>
+                <button type="button" class="btn btn-info btn-icon"><i class="iconfont miit-icon-preview"></i>预览报告</button>
               </div>
             </div>
           </div>
@@ -229,5 +229,9 @@ export default {
   }
   .table{
     border: none;
+  }
+  .btn-icon i.iconfont{
+    font-size: 20px;
+    vertical-align: middle;
   }
 </style>

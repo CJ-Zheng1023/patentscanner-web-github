@@ -75,7 +75,7 @@
               </div>
             </div>
             <div class="end">
-              <button type="button" class="btn btn-info">预览报告</button>
+              <button type="button" class="btn btn-info btn-icon"><i class="iconfont miit-icon-preview"></i>预览报告</button>
             </div>
           </div>
           <div class="panel-body no-padding">
@@ -521,5 +521,9 @@ export default {
     text-align: right;
     margin-top:30px;
     margin-right: 20px;
+  }
+  .btn-icon i.iconfont{
+    font-size: 20px;
+    vertical-align: middle;
   }
 </style>
