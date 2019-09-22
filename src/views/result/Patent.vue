@@ -1,5 +1,5 @@
 <template>
-  <div class="app-container">
+  <div class="app-container view">
     <div class="wrapper clearfix">
       <div class="left">
         <div class="panel">
@@ -69,7 +69,7 @@
                     <a hre="javascript:;">聚焦</a>
                   </li>
                   <li class="menu-item">
-                    <a hre="javascript:;">对比库</a>
+                    <a hre="javascript:;" @click="dialogTableVisible = true">对比库</a>
                   </li>
                 </ul>
               </div>
@@ -262,6 +262,87 @@
           </div>
         </div>
       </div>
+      <div class="contrast-view">
+        <el-dialog title="对比库文件管理" :visible.sync="dialogTableVisible">
+          <table cellspacing="0" cellpadding="0" border="0" class="table border table-info">
+            <thead>
+            <tr>
+              <th style="width: 6%">
+                <div class="cell">序号</div>
+              </th>
+              <th style="width: 12%">
+                <div class="cell">公开号</div>
+              </th>
+              <th style="width: 20%">
+                <div class="cell">文献标题</div>
+              </th>
+              <th style="width: 12%">
+                <div class="cell">公开日</div>
+              </th>
+              <th style="width: 12%">
+                <div class="cell">申请号</div>
+              </th>
+              <th style="width: 10%">
+                <div class="cell">申请人</div>
+              </th>
+              <th style="width: 10%">
+                <div class="cell">IPC分类</div>
+              </th>
+              <th>
+                <div class="cell">操作</div>
+              </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="(item ,index) in contrastList" :key="index">
+              <td class="center">
+                <div class="cell"><span class="circle">{{index +1}}</span></div>
+              </td>
+              <td>
+                <div class="cell">{{item.pa}}</div>
+              </td>
+              <td>
+                <div class="cell">{{item.title}}</div>
+              </td>
+              <td class="center">
+                <div class="cell">{{item.pd}}</div>
+              </td>
+              <td class="center">
+                <div class="cell">{{item.an}}</div>
+              </td>
+              <td>
+                <div class="cell">{{item.applications}}</div>
+              </td>
+              <td>
+                <div class="cell">{{item.ipc}}</div>
+              </td>
+              <td class="center">
+                <div class="cell">
+                  <button type="button" class="btn btn-primary is-plain btn-radis btn-xs">
+                    <i class="el-icon-view"></i>
+                    查 看
+                  </button>
+                  <button type="button" class="btn btn-danger is-plain btn-radis btn-xs btn-icon">
+                    <i class="el-icon-delete"></i>
+                    删 除
+                  </button>
+                </div>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+          <div class="contrast-paging">
+            <el-pagination
+              @size-change="handleSizeChange"
+              @current-change="handleCurrentChange"
+              :current-page.sync="currentPage3"
+              :page-size="100"
+              layout="prev, pager, next, jumper"
+              :total="1000">
+            </el-pagination>
+          </div>
+        </el-dialog>
+      </div>
     </div>
   </div>
 </template>
@@ -269,6 +350,36 @@
 export default {
   data() {
     return {
+      contrastList: [{
+        pa: '1212121212',
+        title: '手机外屏历史管理装置及方法',
+        pd: '2018-10-23',
+        an: '3023434344',
+        applications: '张三',
+        ipc:'G01011'
+      }, {
+        pa: '1212121212',
+        title: '数据回收方法及移动端',
+        pd: '2018-10-23',
+        an: '3023434344',
+        applications: '张三',
+        ipc:'G01011'
+      },{
+        pa: '1212121212',
+        title: '一种移动终端的数据处理方法及系统',
+        pd: '2018-10-23',
+        an: '3023434344',
+        applications: '张三',
+        ipc:'G01011'
+      },{
+        pa: '1212121212',
+        title: '一种浏览历史的查询方法',
+        pd: '2018-10-23',
+        an: '3023434344',
+        applications: '张三',
+        ipc:'G01011'
+      }],
+      dialogTableVisible: false,
       patents: [{
         ap: 'CN123123',
         name: '无线通信网络中的信号干扰测量信号干扰测量',
@@ -405,5 +516,10 @@ export default {
   }
   .information .information-item{
     margin-bottom: 20px;
+  }
+  .contrast-paging{
+    text-align: right;
+    margin-top:30px;
+    margin-right: 20px;
   }
 </style>

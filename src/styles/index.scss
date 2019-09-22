@@ -83,11 +83,33 @@ div:focus {
 .upload .dragmovement .el-upload{
   width:100%;
 }
-.upload .upload-demo{
+.upload .dragmovement .upload-demo{
   width:70%;
   display: inline-block;
 }
-/*.upload .handmovement .el-upload.el-upload--text{
-  width:100%;
-}*/
+.upload .handmovement .upload-demo{
+  display: inline-block;
+}
+.view .contrast-view .el-dialog__header{
+  padding: 0 15px;
+  background-color: #3053cc;
+  height: 50px;
+  color: #fff;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  line-height: 50px;
+}
+.view .contrast-view .el-dialog__title{
+  color: #fff;
+}
+.view .contrast-view .el-dialog__headerbtn .el-dialog__close {
+  color: #FFF !important;
+}
+.view .contrast-view .el-dialog__body{
+  padding: 0;
+  padding-bottom: 20px;
+}
+.view .contrast-view .el-dialog{
+  width: 1000px;
+}
 // fandp end

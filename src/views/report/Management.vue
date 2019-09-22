@@ -21,18 +21,18 @@
         <table cellspacing="0" cellpadding="0" border="0" class="table table-info">
           <thead>
           <tr>
-            <th style="width: 50px">
+            <th style="width: 5%">
               <div class="cell">
                 <el-checkbox :indeterminate="isIndeterminate" v-model="allChecked" @change="checkAll"></el-checkbox>
               </div>
             </th>
-            <th style="width: 80px">
+            <th style="width: 8%">
               <div class="cell">序号</div>
             </th>
-            <th style="width: 350px">
+            <th style="width: 35%">
               <div class="cell">专利名称</div>
             </th>
-            <th style="width: 250px">
+            <th style="width: 20%">
               <div class="cell">生成时间</div>
             </th>
             <th>
@@ -53,7 +53,7 @@
             <td>
               <div class="cell">{{item.patentName}}</div>
             </td>
-            <td>
+            <td class="center">
               <div class="cell">{{item.createTime}}</div>
             </td>
             <td class="center">

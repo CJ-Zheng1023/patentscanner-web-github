@@ -19,8 +19,9 @@
               :limit="3"
               :on-exceed="handleExceed"
               :file-list="fileList">
-              <button type="button" class="btn btn-normal btn-icon"><i class="el-icon-upload2"></i>点击上传</button><span class="update-desc">（ 可直接拖动列表 ）</span>
+              <button type="button" class="btn btn-normal btn-icon"><i class="el-icon-upload2"></i>点击上传</button>
             </el-upload>
+            <span class="update-desc">（ 可直接拖动列表 ）</span>
           </div>
           <div class="dragmovement">
             <el-upload
@@ -149,6 +150,7 @@
   color: #606266;
   font-size:14px;
   margin-bottom: 20px;
+  margin-top:10px;
 }
 
 </style>

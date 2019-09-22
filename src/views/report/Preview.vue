@@ -140,13 +140,13 @@
                         <span class="circle">{{index+1}}</span>
                       </div>
                     </td>
-                    <td>
+                    <td class="center">
                       <div class="cell">{{item.docNumber}}</div>
                     </td>
-                    <td>
+                    <td class="center">
                       <div class="cell">{{item.category}}</div>
                     </td>
-                    <td>
+                    <td class="center">
                       <div class="cell">{{item.openDay}}</div>
                     </td>
                     <td>
@@ -158,7 +158,7 @@
                     <td>
                       <div class="cell">{{item.ipc}}</div>
                     </td>
-                    <td>
+                    <td class="center">
                       <div class="cell">
                         <span :class="[item.score > 50 ? 'high' : 'low']">{{item.score + '%'}}</span>
                       </div>
