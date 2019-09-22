@@ -254,9 +254,10 @@ $labelWidth: 150px;
   list-style: none;
   padding:5px 10px;
   border-bottom: 1px solid #E0E9FC;
+  cursor: pointer;
 }
 .alternative-body ul li p{
-  margin:5px;
+  margin:10px;
   padding:0;
 }
 .alternative-body ul li span{
