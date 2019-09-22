@@ -18,7 +18,7 @@
         </div>
       </div>
       <div class="panel-body no-padding">
-        <table cellspacing="0" cellpadding="0" border="0" class="table table-info">
+        <table cellspacing="0" cellpadding="0" border="0" class="table">
           <thead>
           <tr>
             <th style="width: 5%">
